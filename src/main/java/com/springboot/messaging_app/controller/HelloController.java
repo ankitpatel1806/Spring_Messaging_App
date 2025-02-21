@@ -20,4 +20,8 @@ public class HelloController {
     public String sayHello(@RequestBody User user){
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+    @PutMapping("/put/{firstName}")
+    public String sayHello(@PathVariable("firstName") String firstName, @RequestParam("lastName") String lastName){
+        return "Hello "+firstName+" "+lastName;
+    }
 }
